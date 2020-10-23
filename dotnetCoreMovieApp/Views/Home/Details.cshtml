@@ -1,0 +1,27 @@
+﻿@model Movie
+
+<div class="row">
+    <div class="col-md-3">
+        @await Component.InvokeAsync("CategoryMenu")
+    </div>
+    <div class="col-md-9">
+        <div class="card mb-3">
+            <div class="card-body">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="~/@Model.ImageUrl" alt="" style="margin-left:-10px" class="card-img" />
+                    </div>
+                    <div class="col-md-8">
+                        <h5 class="card-title">
+                            <a asp-controller="Home"
+                               asp-action="Details"
+                               asp-route-id="@Model.Id">@Model.Name</a>
+                        </h5>
+                        <p class="card-text">@Html.Raw(@Model.Description)</p>
+                        <p class="card-text">4 days ago</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
